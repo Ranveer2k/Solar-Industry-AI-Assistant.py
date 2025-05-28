@@ -5,7 +5,9 @@ import base64
 import openai  # type: ignore # Ensure openai package is installed
 
 # === Configuration ===
-API_KEY = "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"  # Replace with your actual key or load from environment variable
+API_KEY = "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"  
+# Replace with your actual key or load from environment variable
+
 client = openai.OpenAI(api_key=API_KEY)
 
 # === ROI Calculation ===
@@ -67,6 +69,7 @@ if image:
 
     if st.button("🔍 Analyze Rooftop"):
         with st.spinner("Analyzing with GPT-4o Vision..."):
+            
             try:
                 result = analyze_image_with_gpt(image)
                 st.subheader("📊 AI Analysis Result")
